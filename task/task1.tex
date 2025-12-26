@@ -12,6 +12,9 @@ parskip=full
 \usepackage{lmodern}
 \usepackage[a4paper,top=2cm,margin=2.5cm]{geometry}
 \usepackage{titling}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{placeins}
 
 \setlength{\droptitle}{-1.5cm}
 
@@ -29,12 +32,11 @@ parskip=full
 \tableofcontents
 \section{Projektaufgabe}
 In dieser Aufgabe beschäftigen wir uns mit Objektorientierung in Python.
-Der Fokus liegt auf der Implementierung einer Klasse, dabei nutzen wir insbesondere auch Magic Methods.\\
-\\
-\hspace*{2cm}\includegraphics[width=12cm, height=5cm]{./../diagram/classes_files.png}\\
-\hspace*{3cm}\scriptsize\bf Abbildung 1: \normalfont Darstellung der Klassenbeziehungen.\normalsize\\
+Der Fokus liegt auf der Implementierung einer Klasse, dabei nutzen wir insbesondere auch Magic Methods.
 
 
+\includegraphics{../diagram/classes_files.png}
+  
 
 \subsection{Einleitung}
 Ein Datensatz besteht aus mehreren Daten, ein einzelnes Datum wird durch ein Objekt der Klasse \texttt{DataSetItem} repräsentiert.
@@ -55,7 +57,7 @@ in der Datei \texttt{implementation.py} muss die Klasse \texttt{DataSet} impleme
 Die Datei \texttt{main.py} nutzt die Klassen \texttt{DataSet} und \texttt{DataSetItem} aus den jeweiligen Dateien und testet die Schnittstelle und Operationen von \texttt{DataSetInterface}.
 
 \subsection{Methoden}
-Bei der Klasse "DataSet" sind insbesondere folgenden Methoden zu implementieren, die genaue Spezifikation finden Sie in der \texttt{dataset.py}: 
+Bei der Klasse \texttt{DataSet} sind insbesondere folgenden Methoden zu implementieren, die genaue Spezifikation finden Sie in der \texttt{dataset.py}: 
 
 \begin{enumerate}
 \item \texttt{\_\_setitem\_\_(self, name, id\_content)} Hinzufügen eines Datums, mit Name, ID und Inhalt
