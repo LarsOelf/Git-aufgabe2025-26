@@ -47,10 +47,10 @@ Ein Datensatz besteht aus mehreren Daten, ein einzelnes Datum wird durch ein Obj
 Jedes Datum hat einen Namen (Zeichenkette), eine ID (Zahl) und beliebigen Inhalt.
 
 Nun sollen mehrere Daten, Objekte vom Typ \texttt{DataSetItem}, in einem Datensatz zusammengefasst werden.
-Sie haben sich bereits auf eine Schnittstelle und die benötigten Operationen geeinigt,
-die ein Datensatz unterstützen muss.
-Es gibt eine Klasse \texttt{DataSetInterface}, die diese Schnittstelle definiert und die
-Operationen eines Datensatzes vorgibt.
+Sie haben sich schon auf eine Schnittstelle und die benötigten Operationen,
+die ein Datensatz unterstützen muss, geeinigt.
+Es gibt eine Klasse \texttt{DataSetInterface}, die diese Schnittstelle definiert und 
+Operationen jedes Datensatzes angibt.
 Bisher fehlt jedoch die Implementierung eines Datensatzes mit allen Operationen.
 
 Implementieren Sie eine Klasse \texttt{DataSet} als Unterklasse von \texttt{DataSetInterface}.
@@ -61,12 +61,11 @@ Es gibt drei Dateien: \texttt{dataset.py}, \texttt{main.py} und \texttt{implemen
 In der Datei \texttt{dataset.py} befinden sich die Klassen \texttt{DataSetInterface} und
 \texttt{DataSetItem}.
 In der Datei \texttt{implementation.py} muss die Klasse \texttt{DataSet} implementiert werden.
-Die Datei \texttt{main.py} nutzt die Klassen \texttt{DataSet} und \texttt{DataSetItem} und testet
-die Schnittstelle und deren Operationen.
-
+Die Datei \texttt{main.py} nutzt die Klassen \texttt{DataSet} und \texttt{DataSetItem} und aus den jeweiligen Dateien und testet die Schnittstelle und Operationen von
+\texttt{DataSetInterface}.
 \subsection{Methoden}
-Bei der Klasse \texttt{DataSet} sind insbesondere die folgenden Methoden zu implementieren.
-Die genaue Spezifikation finden Sie in der Datei \texttt{dataset.py}.
+Bei der Klasse \texttt{DataSet} sind insbesondere die folgenden Methoden zu implementieren,
+die genaue Spezifikation finden Sie in der Datei \texttt{dataset.py}:
 
 \begin{enumerate}
   \item \texttt{\_\_setitem\_\_(self, name, id\_content)}  
@@ -76,8 +75,8 @@ Die genaue Spezifikation finden Sie in der Datei \texttt{dataset.py}.
         Hinzufügen eines \texttt{DataSetItem}
 
   \item \texttt{\_\_delitem\_\_(self, name)}  
-        Löschen eines Datums auf Basis des Namens. Der Name ist dabei ein eindeutiger Schlüssel
-        und darf pro Datensatz nur einmal vorkommen.
+        Löschen eines Datums auf Basis des Namens. Das heißt auch, dass der Name eines Datums ein eindeutiger Schlüssel ist
+        und jeder Name nur einmal pro Datensatz vorkommen kann.
 
   \item \texttt{\_\_contains\_\_(self, name)}  
         Prüfung, ob ein Datum mit diesem Namen im Datensatz vorhanden ist
@@ -86,29 +85,28 @@ Die genaue Spezifikation finden Sie in der Datei \texttt{dataset.py}.
         Abrufen eines Datums über seinen Namen
 
   \item \texttt{\_\_and\_\_(self, dataset)}  
-        Bestimmung der Schnittmenge zweier Datensätze
+        Schnittmenge zweier Datensätze bestimmen und als einen neuen Datensatz zurückgeben.
 
   \item \texttt{\_\_or\_\_(self, dataset)}  
-        Bestimmung der Vereinigung zweier Datensätze
+        Vereinigungen zweier Datensätze bestimmen und als einen neuen Datensatz zurückgeben.
 
   \item \texttt{\_\_iter\_\_(self)}  
-        Iteration über alle Daten eines Datensatzes
+        Iteration über alle Daten den Datensatzes (es ist möglich eine Sortierung für die Reihenfolge der Iteration anzugeben).
 
   \item \texttt{\_\_filtered\_iterate\_\_(self, filter)}  
-        Gefilterte Iteration über einen Datensatz anhand einer Lambda-Funktion
+        Gefilterte Iteration über einen Datensatz, dabei dient eine Lambda-Funktion mit den Parametern Name und ID für jedes Datum als Filter.
 
   \item \texttt{\_\_len\_\_(self)}  
-        Rückgabe der Anzahl der enthaltenen Daten
+        Anzahl der Daten in einem Datensatz abrufen.
 \end{enumerate}
 
 \section{Abgabe}
 Programmieren Sie die Klasse \texttt{DataSet} in der Datei \texttt{implementation.py} zur Lösung
 der oben beschriebenen Aufgabe im VPL.
 
-Sie können die Entwicklung auch lokal durchführen. Die benötigten Dateien stehen dazu im Moodle
-zum Download bereit.
+Sie können auch direkt auf Ihrem Computer programmieren, dazu finden Sie alle drei benötigten Dateien zum Download im Moodle.
 
-Das VPL nutzt den gleichen Code, wobei die Datei \texttt{main.py} um zusätzliche Testfälle und
-Überprüfungen erweitert wurde, um sicherzustellen, dass die korrekten Klassen verwendet werden.
+Das VPL nutzt den gleichen Code, wobei die Datei \texttt{main.py} um weitere Testfälle und
+Überprüfungen erweitert wurde. Die Überprüfungen dienen dazu sicherzustellen, dass Sie die richtigen Klassen nutzen.
 
 \end{document}
